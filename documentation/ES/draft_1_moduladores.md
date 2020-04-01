@@ -23,18 +23,18 @@
 - [Capitulo 2 Moduladores y demoduladores](#capitulo-2-moduladores-y-demoduladores)
   - [2.1 Señal portadora](#21-se%c3%b1al-portadora)
   - [2.2 Señal moduladora](#22-se%c3%b1al-moduladora)
-  - [2.1 Por que modular una señal?](#21-por-que-modular-una-se%c3%b1al)
-  - [2.2 Técnicas de modulación empleadas](#22-t%c3%a9cnicas-de-modulaci%c3%b3n-empleadas)
-  - [2.3 Métodos de Modulación](#23-m%c3%a9todos-de-modulaci%c3%b3n)
-  - [2.3 Tipos de moduladores](#23-tipos-de-moduladores)
-    - [2.3.1 Modulación analógica:](#231-modulaci%c3%b3n-anal%c3%b3gica)
-      - [2.3.1.1 Modulación de la amplitud.](#2311-modulaci%c3%b3n-de-la-amplitud)
-      - [2.3.1.2 Modulación de la frecuencia.](#2312-modulaci%c3%b3n-de-la-frecuencia)
-      - [2.3.1.3 Modulación de la fase.](#2313-modulaci%c3%b3n-de-la-fase)
-    - [2.3.2 Modulación digital](#232-modulaci%c3%b3n-digital)
-      - [2.3.2.1 Modulación por desplazamiento de amplitud (**ASK, Amplitude Shift Keying**)](#2321-modulaci%c3%b3n-por-desplazamiento-de-amplitud-ask-amplitude-shift-keying)
-      - [2.3.2.2 Modulación por desplazamiento de frecuencia (**FSK,Frecuency Shift Keying**)](#2322-modulaci%c3%b3n-por-desplazamiento-de-frecuencia-fskfrecuency-shift-keying)
-      - [2.3.2.3 Modulación por desplazamiento de fase (**PSK, Phase Shift Keying**)](#2323-modulaci%c3%b3n-por-desplazamiento-de-fase-psk-phase-shift-keying)
+  - [2.3 Por que modular una señal?](#23-por-que-modular-una-se%c3%b1al)
+  - [2.4 Técnicas de modulación empleadas](#24-t%c3%a9cnicas-de-modulaci%c3%b3n-empleadas)
+  - [2.5 Tipos de moduladores](#25-tipos-de-moduladores)
+    - [2.5.1 Modulación analógica:](#251-modulaci%c3%b3n-anal%c3%b3gica)
+      - [2.5.1.1 Modulación de la amplitud.](#2511-modulaci%c3%b3n-de-la-amplitud)
+      - [2.5.1.2 Modulación de la frecuencia.](#2512-modulaci%c3%b3n-de-la-frecuencia)
+      - [2.5.1.3 Modulación de la fase.](#2513-modulaci%c3%b3n-de-la-fase)
+    - [2.5.2 Modulación digital](#252-modulaci%c3%b3n-digital)
+      - [2.5.2.1 Modulación por desplazamiento de amplitud (**ASK, Amplitude Shift Keying**)](#2521-modulaci%c3%b3n-por-desplazamiento-de-amplitud-ask-amplitude-shift-keying)
+      - [2.5.2.2 Modulación por desplazamiento de frecuencia (**FSK,Frecuency Shift Keying**)](#2522-modulaci%c3%b3n-por-desplazamiento-de-frecuencia-fskfrecuency-shift-keying)
+      - [2.5.2.3 Modulación por desplazamiento de fase (**PSK, Phase Shift Keying**)](#2523-modulaci%c3%b3n-por-desplazamiento-de-fase-psk-phase-shift-keying)
+- [Capitulo 3 Demodulador FSK](#capitulo-3-demodulador-fsk)
 
 
 
@@ -174,7 +174,7 @@ Como se dijo antes una señal moduladora , puede ser una señal de audio, video,
 <img src="imple_pic/modulator1.svg" alt="drawing" height="180" width="400" align="block"/>
 
 
-## 2.1 Por que modular una señal?
+## 2.3 Por que modular una señal?
 
 Es necesario modular las señales por diferentes razones:
 
@@ -189,7 +189,7 @@ Es necesario modular las señales por diferentes razones:
 En resumen, la modulación permite aprovechar mejor el canal de comunicación ya que posibilita transmitir más información en forma simultánea por un mismo canal y/o proteger la información de posibles interferencias y ruidos.
 
 
-## 2.2 Técnicas de modulación empleadas
+## 2.4 Técnicas de modulación empleadas
 
 Uno de los objetivos de las comunicaciones es utilizar una frecuencia portadora como frecuencia básica de una comunicación, pero modificándola siguiendo un proceso denominado modulación para codificar la información en la onda portadora.
 
@@ -204,22 +204,15 @@ Las formas básicas de Modulación son:
   - Modulación en Frecuencia - FM.
   - Modulación en Fase - PM.
 
-## 2.3 Métodos de Modulación
+## 2.5 Tipos de moduladores
 
-En una visión general, las modulaciones pueden clasificarse por el tipo de portadora y de información que esta transporta, de esta manera tenemos
-
-<img src="imple_pic/modulator-methods.svg" alt="drawing" height="400" width="800" align="center"/>
+<img src="imple_pic/modulator-types.svg" alt="drawing" height="400" width="800" align="center"/>
 
 
-## 2.3 Tipos de moduladores
-
-<img src="imple_pic/modulator-methods.svg" alt="drawing" height="400" width="800" align="center"/>
-
-
-### 2.3.1 Modulación analógica: 
+### 2.5.1 Modulación analógica: 
 Las tres técnicas de modulación analógica son:
 
-#### 2.3.1.1 Modulación de la amplitud.
+#### 2.5.1.1 Modulación de la amplitud.
 <br>
 <img src="imple_pic/AM_modulator.svg" alt="drawing" height="200" width="400" align="left"/>
 
@@ -230,20 +223,15 @@ En este tipo de técnica, lo que se obtiene a la salida es la señal portadora o
 <br>
 <br>
 
-#### 2.3.1.2 Modulación de la frecuencia.
+#### 2.5.1.2 Modulación de la frecuencia.
 
-<img src="imple_pic/FM_modulator.svg" alt="drawing" height="220" width="400" align="left"/>
+<img src="imple_pic/FM_modulator.svg" alt="drawing" height="220" width="600" align="center"/>
 <br>
 <br>
 
 En este tipo de modulación, la señal moduladora tiene una amplitud constante pero varia la frecuencia, la cual es utilizada para alterar la frecuencia de la señal portadora o carrier.
 
-
-<br>
-<br>
-<br>
-
-#### 2.3.1.3 Modulación de la fase.
+#### 2.5.1.3 Modulación de la fase.
 
 Este también es un caso de modulación donde las señales de transmisión como las señales de datos son analógicas y es un tipo de modulación exponencial al igual que la modulación de frecuencia. En este caso el parámetro de la señal portadora que variará de acuerdo a la señal moduladora es la fase. La modulación de fase (PM) no es muy utilizada principalmente por que se requiere de equipos de recepción más complejos que en FM y puede presentar problemas de ambigüedad para determinar por ejemplo si una señal tiene una fase de 0º o 180º.
 
@@ -251,10 +239,11 @@ La forma de las señales de modulación de frecuencia y modulación de fase son 
 
 La mayoría de los sistemas de comunicación utilizan alguna de estas tres técnicas de modulación básicas, o una combinación de ellas. Las Radios están basadas en AM y FM siendo la FM la de mejor calidad debido a la ventaja que tiene por manejar mayores frecuencias y mayores anchos de banda que mejoran la percepción por el contenido que se puede transmitir. 
 
-### 2.3.2 Modulación digital 
+### 2.5.2 Modulación digital 
 Los siguientes son algunos casos extremos de estas técnicas
 
-#### 2.3.2.1 Modulación por desplazamiento de amplitud (**ASK, Amplitude Shift Keying**)
+#### 2.5.2.1 Modulación por desplazamiento de amplitud (**ASK, Amplitude Shift Keying**)
+
 La modulación por desplazamiento de amplitud, en inglés Amplitude-shift keying (ASK), es una forma de modulación en la cual se representan los datos digitales como variaciones de amplitud de la onda portadora en función de los datos a enviar.
 
 La amplitud de una señal portadora analógica varía conforme a la corriente de bit (modulando la señal), manteniendo la frecuencia y la fase constante. El nivel de amplitud puede ser usado para representar los valores binarios 0 y 1. Podemos pensar en la señal portadora como un interruptor ON/OFF. En la señal modulada, el valor lógico 0 es representado por la ausencia de una portadora, así que da ON/OFF la operación de pulsación y de ahí el nombre dado.
@@ -268,7 +257,7 @@ La técnica ASK también es usada comúnmente para transmitir datos digitales so
 <img src="imple_pic/ask_modulator.svg" alt="drawing" height="400" width="400" align="center"/>
 
 
-#### 2.3.2.2 Modulación por desplazamiento de frecuencia (**FSK,Frecuency Shift Keying**)
+#### 2.5.2.2 Modulación por desplazamiento de frecuencia (**FSK,Frecuency Shift Keying**)
 
 La modulación por desplazamiento de frecuencia o FSK del inglés Frequency Shift Keying— es una técnica de modulación para la transmisión digital de información utilizando dos o más frecuencias diferentes para cada símbolo.​ La señal moduladora solo varía entre dos valores de tensión discretos formando un tren de pulsos donde uno representa un "1" o "marca" y el otro representa el "0" o "espacio".
 
@@ -280,7 +269,26 @@ En FSK, el bit rate = baud rate. Así, por ejemplo, un 0 binario se puede repres
 
 <img src="imple_pic/fsk_modulator.svg" alt="drawing" height="400" width="400" align="center"/>
 
+En esta forma de modulación la portadora sinusoidal toma dos valores de frecuencia, determinados directamente  por la señal de datos binaria. El modulador puede realizarse en varios modos, los cuales se describen a continuación.
 
-#### 2.3.2.3 Modulación por desplazamiento de fase (**PSK, Phase Shift Keying**)
+<h4> Oscilador controlado por tensión (VCO).</h4>
+
+<img src="imple_pic/modulation-vco.svg" alt="drawing" height="250" width="800" align="center"/>
+
+VCO viene de Oscilador Controlado por Voltaje, el cual es un circuito electrónico capaz de variar su salida de frecuencia a razón del cambio de los símbolos del mensaje.
+
+esta técnica de modulación se basa en variar la frecuencia de salida de la onda dependiendo de la amplitud del mensaje.
+
+<h4> Diferente frecuencia para cada símbolo.</h4>
+
+En la siguiente figura tenemos dos portadoras con diferente frecuencia, para representar los diferentes símbolos dentro del mensaje, en este caso cero(0) y uno(lógico), la frecuencia del oscilador 1 debe ser diferente a la del oscilador 2 pero teniendo en cuanta que la diferencia no debe ser muy grande.
+
+Estas dos frecuencias se hacen pasar por un interruptor digital de dos estados controlado por una señal digital, en este caso el mensaje digital y el cual genera la salida mostrada en la salida del interruptor.
+
+<img src="imple_pic/modulator-switch.svg" alt="drawing" height="200" width="600" align="center"/>
+
+
+#### 2.5.2.3 Modulación por desplazamiento de fase (**PSK, Phase Shift Keying**)
 Es una modulación que se caracteriza porque la fase de la onda portadora varía en forma directamente proporcional de acuerdo con la señal moduladora. La modulación de fase no suele ser muy utilizada porque se requieren equipos de recepción más complejos que los de frecuencia modulada. Además puede presentar problemas de ambigüedad para determinar si una señal tiene una fase de 0º o 180º. 
 
+# Capitulo 3 Demodulador FSK
