@@ -33,8 +33,15 @@
     - [2.5.2 Modulación digital](#252-modulaci%c3%b3n-digital)
       - [2.5.2.1 Modulación por desplazamiento de amplitud (**ASK, Amplitude Shift Keying**)](#2521-modulaci%c3%b3n-por-desplazamiento-de-amplitud-ask-amplitude-shift-keying)
       - [2.5.2.2 Modulación por desplazamiento de frecuencia (**FSK,Frecuency Shift Keying**)](#2522-modulaci%c3%b3n-por-desplazamiento-de-frecuencia-fskfrecuency-shift-keying)
-      - [2.5.2.3 Modulación por desplazamiento de fase (**PSK, Phase Shift Keying**)](#2523-modulaci%c3%b3n-por-desplazamiento-de-fase-psk-phase-shift-keying)
-- [Capitulo 3 Demodulador FSK](#capitulo-3-demodulador-fsk)
+        - [2.5.2.2.1 Multiplexacion de 2 diferentes frecuencias.</h4>](#25221-multiplexacion-de-2-diferentes-frecuenciash4)
+        - [2.5.2.2.2 Oscilador controlado por tensión (VCO).](#25222-oscilador-controlado-por-tensi%c3%b3n-vco)
+      - [2.5.2.3 Modulación por desplazamiento de frecuencia Gausiana (GFSK)](#2523-modulaci%c3%b3n-por-desplazamiento-de-frecuencia-gausiana-gfsk)
+      - [2.5.2.4 Modulación por desplazamiento de fase (**PSK, Phase Shift Keying**)](#2524-modulaci%c3%b3n-por-desplazamiento-de-fase-psk-phase-shift-keying)
+- [Capitulo 3 Filtros](#capitulo-3-filtros)
+  - [3.1 ¿Qué es un filtro de frecuencia?](#31-%c2%bfqu%c3%a9-es-un-filtro-de-frecuencia)
+  - [3.2 Clasificación de los filtros](#32-clasificaci%c3%b3n-de-los-filtros)
+    - [3.2.1 Respuesta en frecuencia](#321-respuesta-en-frecuencia)
+- [Capitulo 4 Demodulador FSK](#capitulo-4-demodulador-fsk)
 
 
 
@@ -244,7 +251,9 @@ Los siguientes son algunos casos extremos de estas técnicas
 
 La modulación por desplazamiento de amplitud, en inglés Amplitude-shift keying (ASK), es una forma de modulación en la cual se representan los datos digitales como variaciones de amplitud de la onda portadora en función de los datos a enviar.
 
-La amplitud de una señal portadora analógica varía conforme a la corriente de bit (modulando la señal), manteniendo la frecuencia y la fase constante. El nivel de amplitud puede ser usado para representar los valores binarios 0 y 1. Podemos pensar en la señal portadora como un interruptor ON/OFF. En la señal modulada, el valor lógico 0 es representado por la ausencia de una portadora, así que da ON/OFF la operación de pulsación y de ahí el nombre dado.
+La amplitud de una señal portadora analógica varía conforme a la corriente de bit (modulando la señal), manteniendo la frecuencia y la fase constante. El nivel de amplitud puede ser usado para representar los valores binarios 0 y 1. Podemos pensar en la señal portadora como un interruptor ON/OFF. 
+
+En la señal modulada, el valor lógico 0 es representado por la ausencia de una portadora, así que da ON/OFF la operación de pulsación y de ahí el nombre dado.
 
 Como la modulación AM, ASK es también lineal y sensible al ruido atmosférico, distorsiones, condiciones de propagación en rutas diferentes en la PSTN, entre otros factores. Esto requiere una amplitud de banda excesiva y es por lo tanto un gasto de energía. Tanto los procesos de modulación ASK como los procesos de demodulación son relativamente baratos. 
 
@@ -257,7 +266,7 @@ La técnica ASK también es usada comúnmente para transmitir datos digitales so
 
 #### 2.5.2.2 Modulación por desplazamiento de frecuencia (**FSK,Frecuency Shift Keying**)
 
-La modulación por desplazamiento de frecuencia o FSK del inglés Frequency Shift Keying— es una técnica de modulación para la transmisión digital de información utilizando dos o más frecuencias diferentes para cada símbolo.​ La señal moduladora solo varía entre dos valores de tensión discretos formando un tren de pulsos donde uno representa un "1" o "marca" y el otro representa el "0" o "espacio".
+La modulación por desplazamiento de frecuencia o FSK del inglés Frequency Shift Keying es una técnica de modulación para la transmisión digital de información utilizando dos o más frecuencias diferentes para cada símbolo.​ La señal moduladora solo varía entre dos valores de tensión discretos formando un tren de pulsos donde uno representa un "1" o "marca" y el otro representa el "0" o "espacio".
 
 En la modulación digital, a la relación de cambio a la entrada del modulador se le llama bit-rate y tiene como unidad el bit por segundo (bps).
 
@@ -269,29 +278,88 @@ En FSK, el bit rate = baud rate. Así, por ejemplo, un 0 binario se puede repres
 
 En esta forma de modulación la portadora sinusoidal toma dos valores de frecuencia, determinados directamente  por la señal de datos binaria. El modulador puede realizarse en varios modos, los cuales se describen a continuación.
 
-<h4> Oscilador controlado por tensión (VCO).</h4>
 
-<img src="imple_pic/modulation-vco.svg" alt="drawing" height="250" width="800" align="center"/>
-
-VCO viene de Oscilador Controlado por Voltaje, el cual es un circuito electrónico capaz de variar su salida de frecuencia a razón del cambio de los símbolos del mensaje.
-
-esta técnica de modulación se basa en variar la frecuencia de salida de la onda dependiendo de la amplitud del mensaje.
-
-<h4> Diferente frecuencia para cada símbolo.</h4>
+##### 2.5.2.2.1 Multiplexacion de 2 diferentes frecuencias.</h4>
 
 En la siguiente figura tenemos dos portadoras con diferente frecuencia, para representar los diferentes símbolos dentro del mensaje, en este caso cero(0) y uno(lógico), la frecuencia del oscilador 1 debe ser diferente a la del oscilador 2 pero teniendo en cuanta que la diferencia no debe ser muy grande.
 
 Estas dos frecuencias se hacen pasar por un interruptor digital de dos estados controlado por una señal digital, en este caso el mensaje digital y el cual genera la salida mostrada en la salida del interruptor.
 
+Esta técnica tiene el inconveniente de que se generan cambios de fase abruptos al pasar de una frecuencia a otra, dichos cambios abruptos generan armónicos indeseables los cuales aumentan el ancho de banda , algo que es indeseable en la modulación de señales 
+
 <img src="imple_pic/modulator-switch.svg" alt="drawing" height="200" width="600" align="center"/>
 
 
-#### 2.5.2.3 Modulación por desplazamiento de fase (**PSK, Phase Shift Keying**)
+
+##### 2.5.2.2.2 Oscilador controlado por tensión (VCO).
+
+<h3>VCO</h3>
+
+La frecuencia instantánea de salida del oscilador es controlada por el voltaje de entrada. Es un tipo de oscilador que puede producir una frecuencia de señal de salida en un amplio rango (pocos Hertz-cientos de Giga Hertz) dependiendo de la tensión de entrada de corriente continua que se le haya asignado.
+
+Este tipo de osciladores al no presentar voltaje en su entrada o lo que es igual a 0 voltios, debe oscilar en una frecuencia llamada frecuencia libre de oscilación, y al empezar a incrementar el voltaje de entrada , la señal de salida se ve alterada en su frecuencia creciendo de forma lineal respecto al voltaje de entrada.
+
+en este caso particular donde queremos modular una señal digital o lo que es equivalente a un tren de pulsos, podemos observar que tenemos dos diferentes voltajes para controlar el VCO: Cuando la señal de datos esta en un nivel alto o 1 lógico, es equivalente a tener un voltaje diferente de cero, y cuando tenemos el estado cero lógico de la señal de datos es como tener el VCO en su estado de oscilación libre a la frecuencia para la que haya sido diseñado.
+
+Esta técnica de modulación al igual que la anterior por multiplexacion de frecuencias  maneja una frecuencia diferente por cada símbolo, con la diferencia de que el VCO elimina los cambios abruptos en el cambio de frecuencia ya que no necesita multiplexar entre diferentes fuentes generadoras de frecuencia, simplemente consiste en controlar la frecuencia de una misma fuente generadora.
+
+<img src="imple_pic/modulation-vco.svg" alt="drawing" height="250" width="800" align="center"/>
+
+
+#### 2.5.2.3 Modulación por desplazamiento de frecuencia Gausiana (GFSK)
+
+<img src="imple_pic/Gaussian-filter.svg" alt="drawing" height="300" width="450" align="left"/>
+
+Esta técnica es similar a la técnica de FSK descrita en el apartado anterior, con una pequeña mejora en el ancho de banda de la señal.
+
+Esta técnica consiste en suavizar el tren de pulsos (datos o señal moduladora), como sabemos dicho tren de pulsos representa una onda cuadrada la cual presenta cambios abruptos cuando pasa de cero lógico a uno lógico, aumentando el ancho de banda del espectro de señal.
+
+Al pasar la señal moduladora (Data) a través de un filtro Gaussiano la salida es muy similar a una onda senoidal la cual presenta transiciones suaves de cero a uno.
+
+Con esto observamos que:
+
+```modulacion GFSK = filtro Gaussiano + FSK```
+
+Habíamos dicho antes que tener estos cambios abruptos de cero a uno en la señal moduladora aumenta el ancho de banda, fácilmente concluimos que la mejora que aplica este tipo de filtro en la modulación FSK es disminuir el ancho de banda en el espectro de la señal de salida. 
+
+#### 2.5.2.4 Modulación por desplazamiento de fase (**PSK, Phase Shift Keying**)
 Es una modulación que se caracteriza porque la fase de la onda portadora varía en forma directamente proporcional de acuerdo con la señal moduladora. La modulación de fase no suele ser muy utilizada porque se requieren equipos de recepción más complejos que los de frecuencia modulada. Además puede presentar problemas de ambigüedad para determinar si una señal tiene una fase de 0º o 180º. 
 
-# Capitulo 3 Demodulador FSK
 
-En este capitulo se intenta mostrar los procesos involucrados para poder recibir una señal emitida por un nodo emisor la cual esta modulada en FSK y se deben realizar algunos procesos para poder obtener la información original sin la portadora, para esto vamos a hacer de  filtros pasa bajo, los cuales permiten que filtremos la señal modulada eliminando sus componentes de alta frecuencia y dejando tan solo el mensaje original; Proceso conocido como demodulacion. 
+# Capitulo 3 Filtros 
+
+
+
+## 3.1 ¿Qué es un filtro de frecuencia?
+
+El análisis de redes sometidas a una excitación sinusoidal en estado estacionario permite estudiar problemas que  ocurren frecuentemente en la generación, transmisión, distribución y utilización de la energía eléctrica.
+
+Un filtro de frecuencia es un circuito que utiliza componentes eléctricos y/o electrónicos para poder atenuar, corregir o rechazar un rango de frecuencias dentro de cualquier tipo de señal. Este rango pude ser distinto en cada ocasión ya que los filtros son muy flexibles y existen diferentes tipos.
+
+## 3.2 Clasificación de los filtros
+
+Existen diferentes tipos de filtros clasificados por su funcionalidad:
+- Filtros Digitales: Procesa Señales discretas, este tipo de filtro es basado en software.
+  - Pasa bajos.
+  - Pasa altos.
+  - Pasa banda.
+- Filtros Análogos: Procesa señales continuas, basado en componentes electrónicos análogos.
+  - Pasivos: Basado en Condensadores, Bobinas y Resistencias, presenta perdidas por atenuación .
+    - Pasa bajos.
+    - Pasa altos.
+    - Pasa banda.
+  - Activos: Basado en Circuitos integrados, Condensadores, Bobinas y Resistencias, ofrecen amplificación.
+    - Pasa bajos.
+    - Pasa altos.
+    - Pasa banda.
+
+### 3.2.1 Respuesta en frecuencia 
+
+<img src="imple_pic/filter-graph.svg" alt="drawing" height="300" width="450" align="center"/>
+
+# Capitulo 4 Demodulador FSK
+
+En este capitulo se intenta mostrar los procesos involucrados para poder recibir una señal emitida por un nodo emisor la cual esta modulada en FSK y se deben realizar algunos procesos para poder obtener la información original sin la portadora, para esto vamos a hacer uso de  filtros pasa bajo, los cuales permiten que filtremos la señal modulada eliminando sus componentes de alta frecuencia y dejando tan solo el mensaje original; Proceso conocido como demodulacion. 
 
 En la demodulación de señales FSK se utilizan dos métodos y estos son: 
 - Detección síncrona. 
