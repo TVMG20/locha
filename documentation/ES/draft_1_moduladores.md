@@ -118,8 +118,6 @@ las ondas electromagnéticas se propagan por el espacio sin necesidad de un medi
 #### 2.1.3 Ondas gravitacionales 
 las ondas gravitacionales son perturbaciones que alteran la geometría misma del espacio-tiempo y aunque es común representarlas viajando en el vacío, técnicamente no podemos afirmar que se desplacen por ningún espacio, sino que en sí mismas son alteraciones del espacio-tiempo.
 
-
-
 ###  2.2 En función de su dirección
 
 #### 2.2.1 Ondas unidimensionales 
@@ -292,3 +290,11 @@ Estas dos frecuencias se hacen pasar por un interruptor digital de dos estados c
 Es una modulación que se caracteriza porque la fase de la onda portadora varía en forma directamente proporcional de acuerdo con la señal moduladora. La modulación de fase no suele ser muy utilizada porque se requieren equipos de recepción más complejos que los de frecuencia modulada. Además puede presentar problemas de ambigüedad para determinar si una señal tiene una fase de 0º o 180º. 
 
 # Capitulo 3 Demodulador FSK
+
+En este capitulo se intenta mostrar los procesos involucrados para poder recibir una señal emitida por un nodo emisor la cual esta modulada en FSK y se deben realizar algunos procesos para poder obtener la información original sin la portadora, para esto vamos a hacer de  filtros pasa bajo, los cuales permiten que filtremos la señal modulada eliminando sus componentes de alta frecuencia y dejando tan solo el mensaje original; Proceso conocido como demodulacion. 
+
+En la demodulación de señales FSK se utilizan dos métodos y estos son: 
+- Detección síncrona. 
+- Detección de envolvente.
+
+
